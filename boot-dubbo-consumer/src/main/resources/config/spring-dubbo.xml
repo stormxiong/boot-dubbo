@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <dubbo:application name="consumer"/>
+    <!--<dubbo:protocol name="dubbo" port="20882"/>-->
+    <dubbo:registry protocol="zookeeper" address="192.168.20.37:2181"/>
+
+    <!--下面这个加载顺序 保证了dubbo的reference注入不为空的问题-->
+    <dubbo:annotation package="com.boot.controller"/>
+    <context:component-scan base-package="com.boot.controller" />
+    <!--<dubbo:reference id="testService" interface="com.boot.service.TestService"/>-->
+
+</beans>
