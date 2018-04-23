@@ -13,5 +13,6 @@
     <dubbo:annotation package="com.boot.controller"/>
     <context:component-scan base-package="com.boot.controller" />
     <!--<dubbo:reference id="testService" interface="com.boot.service.TestService"/>-->
-
+    <!--<bean id="testService" class="com.boot.service.impl.TestServiceImpl"/>-->
+    <!--<dubbo:reference id="testService" interface="com.boot.service.TestService"/>-->
 </beans>

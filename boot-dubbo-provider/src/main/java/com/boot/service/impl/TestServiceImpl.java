@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 
 
 @Component
-@Service()
+@Service
 public class TestServiceImpl implements TestService {
 
     @Override
@@ -24,6 +24,10 @@ public class TestServiceImpl implements TestService {
         user.setAge(20);
         user.setGender(0);
         return user;
+
+
+
+
 
     }
 }
